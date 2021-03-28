@@ -22,7 +22,5 @@ if(isset($_POST["bang"])){
     }
 ?>
 
-
-
 </body>
 </html>

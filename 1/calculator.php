@@ -25,9 +25,9 @@
 </form>
 
 <?php
-$firstNumber=$_POST['first'] ?? "";
-$secondNumber=$_POST['second'] ?? "";
-$calculate=$_POST['method'] ?? "";
+$firstNumber=$_post['first'] ?? "";
+$secondNumber=$_post['second'] ?? "";
+$calculate=$_post['method'] ?? "";
 
 switch($calculate)
 {

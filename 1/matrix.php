@@ -19,10 +19,10 @@
 
 <?php
 
-if(isset($_POST["bang"])){
+if(isset($_post["bang"])){
  
-    $columns =$_POST["a"];  
-    $rows = $_POST["b"];
+    $columns =$_post["a"];  
+    $rows = $_post["b"];
 
     if (!is_numeric($rows) || !is_numeric($columns)) {
         echo("Error");
