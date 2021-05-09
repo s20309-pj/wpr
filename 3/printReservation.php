@@ -38,7 +38,6 @@
            }
            echo"</div>";
 
-
            echo "<p>Card number: $cardNumber";
            echo "<p>Email: $email";
            echo "<p>Arrival Date: $checkIn";
@@ -59,14 +58,14 @@
     if(isset($_POST["loadValues"])) {
         $row = 1;
         if (($fp = fopen("reservation.csv", "r")) !== FALSE) {
-            $colName = fgetcsv($fp, 1000, ";");
-            while (($num = fgetcsv($fp, 1000, ";")) !== FALSE) {
-                $col = count($colName);
+            $columnName = fgetcsv($fp, 1000, ";");
+            while (($number = fgetcsv($fp, 1000, ";")) !== FALSE) {
+                $col = count($columnName);
                 $row++;
                 echo "<p>Order: $row</p>";
-                for ($x=0; $x < $colName; $x++)
+                for ($x = 0; $x < $columnName; $x++)
                 {
-                    echo $colName[$x] ?? "".": ".$num[$x] ?? "";
+                    echo $columnName[$x] ?? "".": ".$number[$x] ?? "";
                 }
             }
 
