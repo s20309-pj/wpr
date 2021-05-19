@@ -14,7 +14,7 @@ $_SESSION["pageHits"]++;
 else {
 $_SESSION["pageHits"] = 0;
 }
-setcookie("last_login", date("Y-m-d h:i:sa", time())-360);
+setcookie("last_page_hit", date("Y-m-d h:i:sa", time()));
 echo "Page Hits:"; echo $_SESSION["pageHits"];
 
 ?>
