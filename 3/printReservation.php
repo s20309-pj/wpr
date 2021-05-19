@@ -12,9 +12,9 @@
            $wholeData = array (
            $reservationDate = date("d.m.Y"),
            $numberOfPeople = $_POST["numberOfPeople"] ?? "",
-           $firstName = $_POST["name"] ?? "",
-           $lastName = $_POST["surname"] ?? "",
-           $email = $_POST["email"] ?? "",
+           $firstName = $_POST['name'] ?? "",
+           $lastName = $_POST['surname'] ?? "",
+           $email = $_POST['email'] ?? "",
            $cardNumber = $_POST["cardNumber"] ?? "",
            $checkIn = $_POST["arrival"] ?? "",
            $checkOut = $_POST["leave"] ?? ""
@@ -25,17 +25,14 @@
 
            echo"<input name=\"numberOfPeople\" value=\"numberOfPeople\" hidden>";
            echo"<div class=\"name\">";
-           for($i = 0 ; $i < $numberOfPeople; $i++){
-                       //  if ($numberOfPeople >= 1) {
+
                for ($i = 1; $i <= $numberOfPeople; $i++) {
 
-                   $firstName = $_POST["firstName$i"] ?? "";
-                   echo "<p>First Name: $firstName</p>";
+                   echo "<p>First Name: $firstName";
 
-                   $lastName = $_POST["lastName$i"] ?? "";
-                   echo "<p>Last Name: $lastName</p>";
+                   echo "<p>Last Name: $lastName";
                }
-           }
+
            echo"</div>";
 
            echo "<p>Card number: $cardNumber";

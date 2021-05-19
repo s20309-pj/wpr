@@ -8,33 +8,37 @@
 </head>
 <body>
     <?php
-        $reserwationDate = date("d.m.Y");
+    if(isset($_POST['submit'])) {
+
+        $reservationDate = date("d.m.Y");
         $numberOfPeople = $_POST["numberOfPeople"] ?? "";
-        $firstName = $_POST["name"] ?? "";
-        $lastName = $_POST["surname"] ?? "";
-        $email=$_POST["email"] ?? "";
-        $cardNumber=$_POST["cardNumber"] ?? "";
-        $checkIn=$_POST["arrival"] ?? "";
-        $checkOut=$_POST["leave"] ?? "";
+        $firstName = $_POST['name'] ?? "";
+        $lastName = $_POST['surname'] ?? "";
+        $email = $_POST['email'] ?? "";
+        $cardNumber = $_POST["cardNumber"] ?? "";
+        $checkIn = $_POST["arrival"] ?? "";
+        $checkOut = $_POST["leave"] ?? "";
 
-        echo"<p>order date: $reserwationDate</p> 
+        echo "<p>order date: $reservationDate</p> 
         <br>";
-        echo"<p>Number of people: $numberOfPeople </p>";
+        echo "<p>Number of people: $numberOfPeople </p>";
 
-        if($numberOfPeople >= 1) {
-         for($i = 1; $i < $numberOfPeople; $i++){
+        echo "<input name=\"numberOfPeople\" value=\"numberOfPeople\" hidden>";
+        echo "<div class=\"name\">";
 
-         $firstName = $_POST["name$i"] ?? "";
-         echo"<p>First Name: $firstName</p>";
+        for ($i = 1; $i <= $numberOfPeople; $i++) {
 
-         $lastName = $_POST["surname$i"] ?? "";
-         echo"<p>Last Name: $lastName</p>";
-         }
+            echo "<p>First Name: $firstName";
+
+            echo "<p>Last Name: $lastName";
         }
-        echo"<p>Card number: $cardNumber";
-        echo"<p>Email: $email";
-        echo"<p>Arrival Date: $checkIn";
-        echo"<p>Leave Date: $checkOut</p>";
+
+        echo "</div>";
+        echo "<p>Card number: $cardNumber";
+        echo "<p>Email: $email";
+        echo "<p>Arrival Date: $checkIn";
+        echo "<p>Leave Date: $checkOut</p>";
+    }
     ?>
 </body>
 </html>

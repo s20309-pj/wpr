@@ -20,9 +20,10 @@
         </style>
 </head>
 <?php
-    if(isset($_POST['submit'])){
+session_start();
+    if(isset($_POST["submit"])){ 
         
-        $numberOfPeople = $_POST["number"] ?? "";
+        $numberOfPeople = $_POST["numberOfPeople"];
 
         echo"<form method = \"post\" action = \"printReservation.php\">";
         echo"<input name=\"numberOfPeople\" value=\"$numberOfPeople\" hidden>";
@@ -30,7 +31,7 @@
 
         for($i = 0; $i < $numberOfPeople; $i++){
             echo ('
-            <div>
+               <div>
             <label for = "name"> Name </label>
             <input type = "text" name = "name">
             <br>
